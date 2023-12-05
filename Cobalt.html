@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Sound Example</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: white; 
+    }
+
+    button {
+      font-size: 24px;
+      padding: 15px 30px; 
+      margin-top: 20px; 
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      display: none; /* Initially hide the h1 element */
+    }
+    p{
+      font-size:10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="h1Text">Raphael tragically passed away from a collapsing mine in 2018</h1>
+
+<audio id="Raphael">
+    <source src="Raphael.mp3" type="audio/mp3">
+</audio>
+
+<button onclick="playSound()">Play Sound</button>
+<img src="volume.png" width="80" height="90">
+
+<script>
+  function playSound() {
+    var audio = document.getElementById("Raphael");
+    var h1Text = document.getElementById("h1Text");
+
+    if (audio.paused) {
+      audio.play();
+      audio.addEventListener('ended', function() {
+        h1Text.style.display = 'block'; // Show the h1 element after audio ends
+      });
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+</script>
+
+
+</body>
+<footer>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<p>Photos from Poster:</p>
+<p>Giant Lithium Deposit in Democratic Republic of Congo Sparks Boardroom Battle.” Bloomberg.com, 22 Nov. 2023, www.bloomberg.com/news/articles/2023-11-22/boardroom-battle-erupts-over-struggle-for-giant-lithium-deposit. Accessed 5 Dec. 2023.<br>“Photographing Congo’s Cobalt Empire.” Pulitzer Center, pulitzercenter.org/stories/photographing-congos-cobalt-empire.<br>“Electric Cars Farmed by Child Slave Labour Don’t Make the World Better.” The US Sun, 19 Feb. 2021, www.the-sun.com/news/2370964/jeremy-clarkson-electric-cars-cobalt-batteries-child-labour-congo/.<br>Boyle, Louise. “Cobalt Mining for Big Tech Is Driving Child Labor, Deaths in the Congo.” The Independent, 23 Feb. 2023, www.independent.co.uk/climate-change/news/phone-electric-vehicle-congo-cobalt-mine-b2277665.html.<br>
+</footer>
+</html>
+
+
+
